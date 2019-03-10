@@ -3,10 +3,15 @@ filebeat.config:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: false
 
-filebeat.autodiscover:
-  providers:
-    - type: docker
-      hints.enabled: true
+filebeat.modules:
+  - module: nats
+    log:
+      enabled: true
+      var.paths:
+        - /tmp/nats.log
+
+setup.dashboards.enabled: true
+setup.dashboards.directory: /tmp/nats
 
 processors:
 - add_cloud_metadata: ~

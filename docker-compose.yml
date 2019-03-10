@@ -29,9 +29,15 @@ services:
       - "./nats.log:/tmp/nats.log"
 #  filebeat:
 #    image: docker.elastic.co/beats/filebeat:7.0.0-beta1
-#    command: filebeat -e -d "*" --strict.perms=false
+#    depends_on:
+#      - "elasticsearch"
+#      - "kibana"
+#      - "gnatsd"
+#    command: ./start-filebeat.sh
 #    volumes:
 #      - "./filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro"
+#      - "./start-filebeat.sh:/usr/share/filebeat/start-filebeat.sh"
+#      - "./nats.log:/tmp/nats.log"
   metricbeat:
     image: docker.elastic.co/beats/metricbeat:7.0.0-beta1
     depends_on:
