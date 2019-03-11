@@ -13,6 +13,9 @@ filebeat.modules:
 setup.dashboards.enabled: true
 setup.dashboards.directory: /tmp/nats
 
+setup.kibana:
+  host: "kibana:5601"
+
 processors:
 - add_cloud_metadata: ~
 
