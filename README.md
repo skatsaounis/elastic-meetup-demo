@@ -42,6 +42,7 @@ which may result in out of memory exceptions when running Elasticsearch.
 ```bash
 touch nats.log
 ```
+An empty nats.log file is needed for the container volume sharing.
 
 ```bash
 sudo docker-compose up
