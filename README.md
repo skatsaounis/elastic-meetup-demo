@@ -27,12 +27,27 @@ To be able to run the deployment user must belong to sudoers group as well.
 
 ### Instructions
 
-```
+```bash
 bash build_filebeat.sh
+```
+This command downloads beat project, checkouts version 7.x and builds Filebeat copying the binary to
+the Filebeat Dockerfile directory.
+
+```bash
 sudo sysctl -w vm.max_map_count=262144
+```
+This increases the operating system limits on mmap counts as it may be too low,
+which may result in out of memory exceptions when running Elasticsearch.
+
+```bash
 touch nats.log
+```
+
+```bash
 sudo docker-compose up
 ```
+This command brings up the stack.
+
 After the stack is up and running visit Kibana in http://localhost:5601 to see the dashboards
 created for nats metricbeat and filebeat.
 
