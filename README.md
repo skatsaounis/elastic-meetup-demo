@@ -49,8 +49,9 @@ sudo docker-compose up
 ```
 This command brings up the stack.
 
-After the stack is up and running visit Kibana in http://localhost:5601 to see the dashboards
-created for nats metricbeat and filebeat.
+After the stack is up and running visit Kibana in http://localhost:5601 and 
+choose a preferred index (filebeat-* or metricbeat-*) to see the related pre-built dashboards already loaded to Kibana 
+for nats metricbeat and filebeat.
 
 ## Authors
 
