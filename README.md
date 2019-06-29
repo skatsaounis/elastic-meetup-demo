@@ -15,23 +15,14 @@ These instructions will get you a deployment of the project up and running on yo
 
 ### Prerequisites
 
-In order to build the stack, Linux OS is required and the following prerequisites must be met.
+In order to deploy the stack, Linux OS is required and the following prerequisites must be met.
 
 1) docker (latest version)
 2) docker-compose (latest version)
-3) golang
-4) gcc && make
-5) python (v2, v3)
 
 To be able to run the deployment user must belong to sudoers group as well.
 
 ### Instructions
-
-```bash
-bash build_filebeat.sh
-```
-This command downloads beat project, checkouts version 7.x and builds Filebeat copying the binary to
-the Filebeat Dockerfile directory.
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144

@@ -4,11 +4,11 @@ filebeat.config:
     reload.enabled: false
 
 filebeat.modules:
-  - module: nats
-    log:
-      enabled: true
-      var.paths:
-        - /tmp/nats.log
+- module: nats
+  log:
+    enabled: true
+    var.paths:
+      - /tmp/nats.log
 
 setup.dashboards.enabled: true
 setup.dashboards.directory: /tmp/nats
